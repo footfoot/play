@@ -19,6 +19,24 @@ require_relative 'models/user'
 include Play::Helpers
 
 module Play
+
+  def self.app
+    @app ||= Rack::Builder.app {
+      assets = Sprockets::Environment.new
+      assets.append_path 'app/assets/css'
+      assets.append_path 'app/assets/javascripts'
+      assets.append_path 'app/assets/fonts'
+
+      # Load up the apps
+      run Rack::URLMap.new \
+        "/"             => Play::App.new,
+        "/api"          => Play::Api.new,
+        "/live-update"  => Play::LiveUpdate,
+        "/assets"       => assets
+    }
+  end
+
+
   def self.client
     Client.new
   end

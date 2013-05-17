@@ -7,6 +7,9 @@ Bundler.require(:test)
 require 'spec/mini'
 
 require 'play'
+require 'api/api'
+require 'live-update'
+
 include Play
 include Rack::Test::Methods
 
@@ -23,7 +26,7 @@ ActiveRecord::Base.logger = nil
 DatabaseCleaner.strategy = :truncation
 
 def app
-  Play::App
+  Play.app
 end
 
 module Play
