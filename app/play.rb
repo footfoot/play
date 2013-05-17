@@ -51,3 +51,4 @@ module Play
 end
 
 require_relative 'app'
+require_relative 'api/api'

@@ -10,5 +10,6 @@ assets.append_path 'app/assets/fonts'
 Faye::WebSocket.load_adapter('thin')
 
 map('/')            { run Play::App }
+map('/api')            { run Play::Api }
 map('/assets')      { run assets }
 map('/live-update') { run Play::LiveUpdate }
