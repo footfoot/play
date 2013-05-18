@@ -92,6 +92,20 @@ module Play
       native :play
     end
 
+    # Pause play.
+    #
+    # Returns an Array of Strings.
+    def pause
+      native :pause
+    end
+
+    # Plays the next song in the queue.
+    #
+    # Returns an Array of Strings.
+    def next
+      native :next
+    end
+
     # Clear the current playlist.
     #
     # Returns an Array of Strings.
