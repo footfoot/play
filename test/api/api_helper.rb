@@ -5,7 +5,7 @@ def valid_user
 end
 
 def authorized_rack_env_for(user)
-  {"HTTP_AUTHENTICATION" => user.token, "HTTP_X_PLAY_LOGIN" => @user.login}
+  {"HTTP_AUTHENTICATION" => user.token}
 end
 
 def authorized_get(uri, user, opts={})
