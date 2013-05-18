@@ -8,14 +8,17 @@ module Play
 
     put "/play" do
       Play.client.play
+      JSON::dump({:message => 'ok'})
     end
 
     put "/pause" do
       Play.client.pause
+      JSON::dump({:message => 'ok'})
     end
 
     put "/next" do
       Play.client.next
+      JSON::dump({:message => 'ok'})
     end
 
   end
