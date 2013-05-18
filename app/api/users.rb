@@ -1,5 +1,5 @@
 module Play
-  class App < Sinatra:Base
+  class Api < Sinatra::Base
 
     get '/users' do
     end
