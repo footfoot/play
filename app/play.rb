@@ -70,3 +70,7 @@ end
 
 require_relative 'app'
 require_relative 'api/api'
+require_relative 'api/controls'
+require_relative 'api/library'
+require_relative 'api/queue'
+require_relative 'api/users'
