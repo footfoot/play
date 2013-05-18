@@ -18,7 +18,5 @@ module Play
       Play.client.next
     end
 
-    put "/previous" do
-    end
   end
 end
