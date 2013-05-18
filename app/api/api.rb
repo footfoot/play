@@ -11,7 +11,7 @@ module Play
     end
 
     def find_user
-      token = request.env["HTTP_AUTHORIZATION"] || params[:token] || ""
+      token = request.env["HTTP_AUTHENTICATION"] || params[:token] || ""
       login = request.env["HTTP_X_PLAY_LOGIN"] || params[:login] || ""
 
       if token == Play.config['auth_token']
