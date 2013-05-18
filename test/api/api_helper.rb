@@ -1,5 +1,7 @@
 require File.expand_path("../../helper", __FILE__)
 
+Play.config['auth_token'] = '123456789'
+
 def valid_user
   User.create(:login => 'tater', :email => 'tater@github.com')
 end
