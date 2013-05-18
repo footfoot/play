@@ -157,5 +157,14 @@ module Play
     def likes
       Like.where(:song_path => path)
     end
+
+    def to_hash
+      {:title => title,
+       :artist => artist_name,
+       :album => album_name,
+       :seconds => seconds,
+       :path => path
+      }
+    end
   end
 end
