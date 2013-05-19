@@ -3,7 +3,7 @@ require File.expand_path("../../helper", __FILE__)
 Play.config['auth_token'] = '123456789'
 
 def valid_user
-  User.create(:login => 'tater', :email => 'tater@github.com')
+  User.find_or_create_by_login_and_email('tater', 'tater@github.com')
 end
 
 def authorized_rack_env_for(user)
@@ -37,4 +37,15 @@ end
 
 def parse_response(response)
   Yajl::load(response.body)
+end
+
+def assert_song_representation(object)
+  keys = object.keys
+
+  assert_equal 5, keys.size
+  assert keys.include? 'title'
+  assert keys.include? 'artist'
+  assert keys.include? 'album'
+  assert keys.include? 'seconds'
+  assert keys.include? 'path'
 end
